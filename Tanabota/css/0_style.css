@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000; /* 背景色を指定 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 画像がはみ出ないようにするために必要 */
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+.image-container {
+    position: relative;
+    width: 100vw; /* ビューポートの幅いっぱいに */
+    height: 100vh; /* ビューポートの高さいっぱいに */
+    overflow: hidden; /* 画像がはみ出ないようにするために必要 */
+}
+
+.image-container img {
+    width: 100%; /* 画像をコンテナの幅いっぱいに広げる */
+    height: 100%; /* 画像をコンテナの高さいっぱいに広げる */
+    object-fit: cover; /* 画像を切り取らずにコンテナにフィットさせる */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    color: white;
+}
+
+.title {
+    font-size: 100px;
+    text-align: left;
+    padding-bottom: 0;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.list-container {
+    text-align: left;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.list-item {
+    font-size: 32px;
+    color: white;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.list-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.list-item a:hover {
+    color: #E9BD8E;
+}
+
+h1 {
+    font-size: clamp(2rem, calc(7.5vw + 1.5rem), 3.75rem);
+}
+
+a {
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+}

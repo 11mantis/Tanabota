@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Kosugi Maru", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidebar-container {
+    position: fixed; /* サイドバーを固定 */
+    left: 0; /* 左端に配置 */
+    top: 0; /* 上端に配置 */
+    width: 30%; /* サイドバーの幅 */
+    height: 100%; /* 画面の高さいっぱいに */
+    background-color: #dbe2f4; /* 背景色を指定 */
+    padding: 6.5vw; /* 内側の余白を指定 */
+    box-sizing: border-box; /* ボックスサイズを指定 */
+    margin: 0 auto;
+}
+
+.sidebar {
+    padding-top: 17%;
+    margin: 0 auto;
+    text-align: center;
+    list-style-type: none;
+}
+
+.sidebar-title {
+    border-bottom: 2px solid #507dab;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 7%;
+}
+
+.sidebar-title a {
+    font-size: 2.5em;
+    color: #3e6a99;
+    text-decoration: none;
+    text-align: left;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin-left: 0;
+}
+
+.list-item {
+    margin-bottom: 15px;
+    list-style-type: none;
+    text-align: left;
+}
+
+.list-item a {
+    font-size: 1.8em;
+    color: #3e6a99;
+    text-decoration: none;
+}
+
+.list-item a:hover {
+    color: #E9BD8E;
+}
+
+.main-container {
+    height: 100vh;
+    margin-left: 30%; /* サイドバーの幅だけコンテンツを右にずらす */
+    box-sizing: border-box; /* ボックスサイズを指定 */
+    background-color: #f0f2fa;
+    flex: 1;
+}
+
+.main {
+    padding-top: 120px;
+    padding-left: 70px;
+}
+
+.main-title {
+    color: #3e6a99;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+.pages {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.topic {
+    font-size: 1.05em;
+    color: #3e6a99;
+    text-decoration: none;
+}
+
+.topic:hover {
+        color: #E9BD8E;
+}
