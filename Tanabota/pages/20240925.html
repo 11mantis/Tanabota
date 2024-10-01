@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月刊棚牡丹</title>
+
+    <style>
+
+        .timeline__container {
+            display: grid;
+            grid-template-columns: 15% 100px 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        .timeline__textBox {
+        grid-column: 3 / 4;
+        }
+
+        .left {
+        margin-left: auto;
+        }
+
+        .right {
+        margin-right: auto;
+        }
+
+        .timeline__textBox__text {
+        max-width: 100%;
+        padding: 0 2rem;
+        border-radius: 16px;
+        margin: 1rem auto;
+        }
+
+        .timeline__line {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        }
+
+        .timeline__line::after {
+        content: '';
+        background-color: skyblue;
+        width: 3px;
+        height: 100%;
+        }
+
+        .timeline__dot {
+        width: 16px;
+        height: 16px;
+        background-color: skyblue;
+        border-radius: 999px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .timeline__date {
+        display: flex;
+        align-items: center;
+        color: gray;
+        font-style: italic;
+        }
+
+        /* スマホ版のスタイル */
+        @media (max-width: 768px) {
+            .timeline__container {
+                grid-template-columns: 80px 50px 1fr; /* 左側の列と中央の列を縮小 */
+            }
+
+        .timeline__date {
+            grid-column: 1 / 2; /* 1列目に配置 */
+            grid-row: 1 / 2;
+            position: relative; /* 相対位置を指定 */
+            margin-left: 15px; /* 左に少し寄せる（必要に応じて調整） */
+            padding-left: 10px; /* 内側のスペースを追加（必要に応じて調整） */
+        }
+
+        .timeline__line {
+            grid-column: 2 / 3; /* 2列目に配置 */
+            grid-row: 1 / 2;
+        }
+
+        .timeline__dot {
+            width: 14px; /* ドットのサイズを少し小さくする（必要に応じて調整） */
+            height: 14px;
+            position: absolute;
+            top: 50%; /* ラインの中央に縦位置を合わせる */
+            left: 50%; /* ラインの中央に横位置を合わせる */
+            transform: translate(-50%, -50%); /* 中央に完全に揃える */
+        }
+        }
+    </style>
+
+    <link rel="stylesheet" href="../css/article_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <script src="../javascript/uluru.js"></script> 
+</head>
+<body>
+    <div class="sidebar-container">
+        <div class="sidebar">
+          <div class="sidebar-title">
+              <a href="../html/0_Toppage.html">月刊棚牡丹</a>
+          </div>
+          <ul class="sidebar-list">
+              <li class="list-item" ><a href="../html/1_About.html">About me?</a></li>
+              <li class="list-item"><a href="../html/2_Article.html">Article</a></li>
+              <li class="list-item"><a href="../html/3_Films.html">Films</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h3 class="page-title">About Uluru</h3>
+        <p>at Northern Territory<br>標高863m、高さ348m<br>(エッフェル塔:320m)<br>(東京タワー333m)<br>(スカイツリー634m)<br>地中には深さ数kmの残りが埋まっている。<br>岩の周囲は9.4km。麓を歩くと約３.5時間とのこと。</p>
+
+        <h3>One of the few natural and cultural mixed World Helitages sites in the world</h3>
+        <p>アナング族がウルル周辺に住み着いたのは、今から１万年前以上とされています。様々な壁画が残されており、一千年程度前のものと推定されるそうです。
+            <br>なぜ文化の世界遺産とされるかというと、原住民アボリジニのアナング族から神聖な場所として崇められていた背景があるため。あらゆる儀式を現在もウルルで行っているとのこと。
+            <br>なぜ神聖かというと、ウルルに集まる動物を狩猟して生活していたため、ウルルは彼らにとって生命線であったからです。
+            <br>なぜ動物が集まるかというと、ウルルに蓄えられた雨水が一つの場所に溜まり、水場が作られていたため。そこに動物が集まるようになっていきました。そして狩猟の際には集まった動物が水場から離れる時の最後の一頭を狩って捕獲していたそうです。
+            <br>なぜ最後の一頭をかというと、先頭の一頭を狩ると、動物達は危険な場所だと認知し、もうここに来なくなるため。そうなるともう狩猟ができなくなるため、最後の一頭を狩るようにしていたそうな。
+            <br>命の恵みを受ける、自分の民族の文化の象徴としても重要な意味を持つエリアだそうです。</p>
+
+        <h3>Histry</h3>
+        <div class="container">
+            
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1870年代</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ヨーロッパ人がオーストラリア西部に到着。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1950</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        初めて国立公園に指定される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1958</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルとカタ・ジュタの両方がアボリジニ保護区から切り離され、the Ayers Rock-Mt Olga National Parkが作られる。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1959</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        道路/給水などインフラ整備、観光地としてリゾート/施設など建設が始まる。滑走路もこの頃建設される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1960</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        訪れた人々が岩登り（登頂）できるように鎖が設置される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1970</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルを豪政府が国立公園/自然保護区として管理を始める。観光客の訪問が増加し地元アボリジニコミュニティと緊張が高まる。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1976</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        アボリジニ土地権利法(アボリジニの土地権利を認めるもの、アボリジニのコミュニティが土地の所有権を申請できる権利/土地の管理に関する権限を持つ事ができる)制定。ただ、ウルルはこの権利法の対象から除外されていたため70'後半には法改正活動が展開される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1977</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        Uluru and Kata Tjuṯa(Ayers Rock-Mt Olga) National Parkと変更される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1985</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルの所有権は豪政府より本来の所有者であるアナング族に返却され、2084年（99年間）まで一帯の土地を環境エネルギー省にリースされる事となる。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1986</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルの登山に関する議論が高まり、アボリジニのコミュニティからの強い要望が出される。アボリジニの宗教的・文化的な理由で登頂の自粛が呼びかけられる。
+                        <br>豪政府との登山を禁止する約束も取り付けられたが2年後に破られ、ウルル登山中に30人以上もの人が亡くなっています。アナング族は自分たちの土地で誰かが亡くなると深い悲しみと責任を感じる。この地域は彼らにとって非常に重要な精神的意味を持っており、岩の上を歩くこと自体が、実は伝統的に先住民の男性の通過儀礼でした。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1987</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ユネスコより世界自然遺産地域に指定。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1992</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        豪政府が「アボリジニの土地権利法」を拡張し、より広範な土地の返還や権利の保護を進める。
+                        <br>（ほんまかいな。）
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1993</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        正式に Uluru-Kata Tjuta National Parkと改名される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">1995</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        国立公園の管理計画が更新され、アボリジニの伝統的な知識と管理方法が公式に採用される。
+                        <br>（結局運営管理は政府がしとるじゃん？）
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">2001</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルの登山に関する規制が強化され、一時的に登山道が閉鎖。観光客が減少し、アボリジニの文化と自然環境の保護が優先される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">2002</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        名前がAyres Rock/Uluruから Uluru /Ayres Rockとリスペクトが込められ逆になる。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">2008</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        登山に関するルールが再確認されアボリジニの人々の要望を尊重する形で管理が行われる。
+                        <br>（アボリジニの人々といってももうstrictに守っている人はいるんだろうか？そしてそんな人数では民族というより個人の意見で方針が決まるようになるのではないか。でも、じゃあ昔々の人数が多い場合は完璧に民族の意見と言えるのか。強者や権力者の意見がそのまま通る場合はどうなのか。）
+                        <br>（結局観光資源として使えるように政府の良いように進めているんじゃないかと思ってしまう。原住民の方も観光資源として利用していきたいなら良いんだけど。）
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">2019</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルの保護とアボリジニの文化的な尊重が強調され、ウルルの登頂が完全に禁止される。
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+
+            <!-- item box -->
+            <div class="timeline__container">
+                <div class="timeline__date left">2020</div>
+                <div class="timeline__line">
+                    <div class="timeline__dot"></div>
+                </div>
+                
+                <div class="timeline__textBox">
+                    <div class="timeline__textBox__text right">
+                        ウルルの周辺地域での観光管理が引き続き行われ、持続可能な観光と文化的な尊重のバランスが取られる。アボリジニコミュニティと観光業界との協力が進められ自然と文化の保護が続けられる。
+                        <br>（コロナ禍で豪観光業界がダメージ、そして観光収入もあったであろうアボリジニコミュニティの方々にもダメージがあったことが想像できる。争う歪み合うよりは、協力していく分には良いよね。）
+                    </div>
+                </div>
+            </div>
+            <!-- item box 終わり -->
+        </div>
+
+        <h3>That's not correct</h3>
+        <p>実は”世界で一番大きな一枚岩”は Western AustraliaにあるMount Augustusです。ウルルじゃないんですねぇ。
+            <br>アボリジニのワジャリ族の人々からはバリングラ(Burringurrah)と呼ばれている。高さは858mで、ウルルのおおよそ2倍にも相当するそうで、登頂できるそうです。</p>
+        
+        <h3>Why is Uluru red?</h3>
+        <p>ウルルを形成する砂岩は鉄分を多く含んでいるので、外観は鉄分が酸化した赤色を呈しています。</p>
+
+        <h3>The Camel Kingdum?</h3>
+        <p>なぜラクダかというと、今回の旅行でキャメルライディングも体験して来たからなのです。
+            <br>ラクダと聞くと中東アラブ、北アフリカの砂漠地帯のイメージ。ですが野生のラクダが世界で一番多い国はここオーストラリアとのこと。
+        </p>
+        <p>野生のラクダが増殖した背景として、1870年から1920年の間にアラビア半島やインド、アフガニスタンなどから2万頭ものラクダがオーストラリアに輸入され、その後、何十年もの間にわたってオーストラリアの社会にとって重要な輸送手段として使われたという事が挙げあられます。
+            <br>ラクダは乾燥した土地の気候に適応して長距離輸送できたため、綿や水、電柱や鉄道の枕木に使う木材、紅茶やタバコなどの輸送に使われるなど、多岐に渡りオーストラリアの経済発展に寄与してきました。ですが、1930年代になって鉄道網や自動車が発達するにつれてラクダは効率の悪い輸送法になってしまったそうです。不要となった多くのラクダたちは野生に放されてしまいますが、既にラクダ達はオーストラリアの環境で生きていくのに適していたこともあり次第に増殖していきました。ラクダ自体はおとなしい性格の動物ですが、水を求めて水道管を破壊してしまったり、放牧地帯の草を食べてしまったりして問題となっているとのことです。
+            <br>…今回は残念ながら野生のラクダを見ることはできませんでした。
+        </p> 
+        <p>人間の都合で絶滅、個体数の調整をされる動物は数多くいるとは思いますが、もちろんオーストラリアにもいるよなと改めて感じました。自分の地元・深川にもいるヌートリアも元々は毛皮を採りたい人間の都合で輸入され、その後人間が思う以上に増えた途端に害獣扱いなんて。全部が上手くいくってことは無いし、社会ってそんなもん、とは言え少し寂しいですね。</p>
+        <p>オーストラリアの動物といえば、カンガルーやコアラを思い浮かべる人がほとんどだと思います。ところが今回注目したラクダを始め、クロコダイル、数多くの鳥類、愛しのクオッカやウォンバットなど、オーストラリアは自然が豊かな分動物王国である面もあります。
+            <br>いつの間にか豪の動物多いに着地してしまいましたが、ラクダも多いんですということが伝えたかった文章でした。
+        </p>
+
+        <h3>About Kings Canyon</h3>
+        <p>at Northern Territory
+            <br>標高約1,100m、高さ100m(峡谷の谷底から壁の頂上まで)
+            <br>ワタルカ国立公園（Watarrka National Park）の一部の峡谷です。
+            <br>実は今回はウルルのおまけ的な存在で行ったのですが…。
+            <br>主なハイキングルートは
+            <br>① Rim Walk
+            <br>約6kmの有名なLookoutを歩いてまわれるコースで、所要時間は3-4時間です。
+            <br>② Creek Walk
+            <br>キングスキャニオンの谷底を歩く、約2.6kmの往復コースでRim Walkほどのアップダウンが無いため歩きやすいそうです。所要時間は約1時間程とのことです。
+            <br>ちなみに今回は行っていません。
+            <br>③ Giles Track
+            <br>約22kmの冒険コース。一般的には一泊挟むコースらしいです。こちらも今回行っていないです。
+        </p>
+
+        <p>主なLookoutは、Garden of Eden、Cotterills Lookout、Priscilla's Crackなど。</p>
+        <p>アクセス: Uluruリゾートから車で約3時間でした。300km!</p>
+
+        <h3>About Kata Tjuta</h3>
+        <p>ウルルと同じくNTは「ウルル カタ-ジュタ国立公園(Uluru-Kata Tjuta National Park)」に位置しています。
+            <br>Kata Tjutaとは現地のアナング族の言葉で「多くの頭」を表しており、多数の大きな岩で成り立っています。
+            <br>ここにある岩郡は数百万年の風化から丸みを帯びた独特の形をしていて、ウルルと並んで人気の観光スポットとなっています。
+            <br>ウォーキングコースが主にWalpa Gorge WalkとValley of the Winds Walkの2つのコースがあり、ウルルやキングスキャニオンと比べると割と短時間で歩けるコースとなっているみたいです。
+            <br>同じ国立公園にあると言っても、ウルルとカタジュタは60kmほど離れており、45分のドライブでたどり着くことができます。
+        </p>
+
+        <h3>紹介だけでかなり長くなってしまったので、</h3>
+        <h3>を作って感想を書きたいと思います。</h3>
+        <h3>to be continued...</h3>
+
+        <p>
+            ↓本当は、このページを開いたときにこの写真が表示されてからフワッと消えるようにしたかった。
+            <br>・写真がサイドバーの前に来ない
+            <br>・画面サイズを変更した時にページ横幅に合わせてサイズが変わってくれない
+            <br>・フワッ消えるアニメーションが簡単なはずなのに実装できない
+            <br>ので未完のまま終わってます。
+            <br>エンジニアって一人ってわかったつもりではいたけど、たまに辛くなる。
+            <br>助けて。</p>
+    
+            <p>何なら写真を複数枚、レイアウト良く入れたい。
+            <br>入れ方はわかるけどかっこよくならない。
+            <br>うーん。未完です。
+        </p>
+
+        <img src="../img/Uluru.jpeg" alt="" width="55%">
+    </div>
+</body>
+</html>
+
+<!-- 年表の行間を調整する。-->
+<!-- テキストボックスの大きさを広げて画面の右に進出する。 -->
+<!-- あとはスマホサイズになった時に文字を自動で縮小できるようにする。 -->
+<!-- レスポンスデザインをしっかり学びたい。 -->
