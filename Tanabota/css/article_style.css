@@ -67,7 +67,7 @@ body {
   box-sizing: border-box; /* ボックスサイズを指定 */
   background-color: #f0f2fa;
   flex: 1;
-  padding: 12% 13.5% 5% 5%;
+  padding: 12% 8% 5% 10%;
   display: block; /* 要素をブロックレベルに設定 */
   overflow: auto; /* コンテンツが背景色を覆わないようにする */
   color: #3e6a99;

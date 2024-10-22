@@ -6,6 +6,14 @@ body {
   font-style: normal;
 }
 
+button {
+  display: none;
+}
+
+.sidebar-mini {
+  display: none;
+}
+
 /* サイドバー */
 .sidebar-container {
   position: fixed; /* サイドバーを固定 */
@@ -34,7 +42,7 @@ body {
 }
 
 .sidebar-title a {
-  font-size: 2.5em;
+  font-size: 2.3rem;
   color: #3e6a99;
   text-decoration: none;
   text-align: left;
@@ -52,7 +60,7 @@ body {
 }
 
 .list-item a {
-  font-size: 1.8em;
+  font-size: 2rem;
   color: #3e6a99;
   text-decoration: none;
 }
@@ -64,21 +72,24 @@ body {
 /* メイン */
 .main-container {
   height: 100vh;
-  margin-left: 30%; /* サイドバーの幅だけコンテンツを右にずらす */
+  margin-left: 30%;
   box-sizing: border-box; /* ボックスサイズを指定 */
   background-color: #f0f2fa;
   flex: 1;
 }
 
 .main {
-  padding-top: 120px;
-  padding-left: 70px;
+  padding: 120px 70px;
+  color: #3e6a99;
 }
 
 .main-title {
-  color: #3e6a99;
   padding-bottom: 25px;
   margin: 0;
+}
+
+p {
+  line-height: 1.5;
 }
 
 ul {
@@ -92,6 +103,7 @@ ul {
 
 .instagram:hover {
   color: #E9BD8E;
+  text-decoration: underline;
 }
 
 .mind-meister {
@@ -101,6 +113,7 @@ ul {
 
 .mind-meister:hover {
   color: #E9BD8E;
+  text-decoration: underline;
 }
 
 li {
