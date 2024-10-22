@@ -6,6 +6,14 @@ body {
     font-style: normal;
 }
 
+button {
+    display: none;
+  }
+  
+.sidebar-mini {
+    display: none;
+}
+
 .sidebar-container {
     position: fixed; /* サイドバーを固定 */
     left: 0; /* 左端に配置 */
@@ -33,7 +41,7 @@ body {
 }
 
 .sidebar-title a {
-    font-size: 2.5em;
+    font-size: 2.3em;
     color: #3e6a99;
     text-decoration: none;
     text-align: left;
@@ -51,7 +59,7 @@ body {
 }
 
 .list-item a {
-    font-size: 1.8em;
+    font-size: 2rem;
     color: #3e6a99;
     text-decoration: none;
 }
@@ -69,8 +77,8 @@ body {
 }
 
 .main {
-    padding-top: 120px;
-    padding-left: 70px;
+    padding: 120px 70px;
+    color: #3e6a99;
 }
 
 .main-title {

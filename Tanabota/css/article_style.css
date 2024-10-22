@@ -6,6 +6,14 @@ body {
     font-style: normal;
 }
 
+button {
+    display: none;
+  }
+  
+.sidebar-mini {
+    display: none;
+}
+
 /* サイドバー */
 .sidebar-container {
     position: fixed; /* サイドバーを固定 */
@@ -86,4 +94,11 @@ h3 {
 p {
     margin-bottom: 40px;
     line-height:200%;
+}
+
+@media(max-width:576px) {
+
+    .main-container {
+        padding: 70px 20px 20px 75px;
+      }
 }
