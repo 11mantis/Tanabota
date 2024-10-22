@@ -5,11 +5,10 @@ html, body {
 }
 
 body {
-    background-color: #000; /* 背景色を指定 */
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* 画像がはみ出ないようにするために必要 */
     font-family: "Kosugi Maru", sans-serif;
 }
 
@@ -24,6 +23,7 @@ body {
     width: 100%; /* 画像をコンテナの幅いっぱいに広げる */
     height: 100%; /* 画像をコンテナの高さいっぱいに広げる */
     object-fit: cover; /* 画像を切り取らずにコンテナにフィットさせる */
+    object-position: 12% center;
 }
 
 .text-overlay {
@@ -31,10 +31,10 @@ body {
     top: 6%;
     left: 6%;
     color: white;
+    width: 20rem;
 }
 
 .title {
-    font-size: 100px;
     text-align: left;
     padding-bottom: 0;
     margin-top: 5%;
@@ -51,7 +51,6 @@ ul {
 }
 
 .list-item {
-    font-size: 32px;
     color: white;
     margin: 0;
     padding-bottom: 5px;
@@ -67,9 +66,32 @@ ul {
 }
 
 h1 {
-    font-size: clamp(2rem, calc(7.5vw + 1.5rem), 3.75rem);
+    font-size: clamp(2rem, calc(7.5vw + 1.5rem), 4rem);
 }
 
 a {
-    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    font-size: clamp(1.8rem, 2vw, 3.5rem);
+}
+
+@media (max-width: 576px) {
+    .image-container img {
+        background-size: cover; /* 画像をカバーする */
+        background-position: center top; /* 画像の上部中央を表示 */
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .text-overlay {
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .list-item {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
