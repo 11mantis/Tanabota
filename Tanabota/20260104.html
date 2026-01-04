@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>月刊棚牡丹</title>
+        <style>
+        /* カードのラッパー：PCでは横並び、スマホでは縦並び */
+        .goals-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        }
+
+        /* 個別カード */
+        .goal-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        padding: 1.5rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        flex: 1 1 280px;          /* 3カラムになるように幅を自動調整 */
+        min-width: 0;
+        }
+
+        /* カードタイトル(h3) */
+        .goal-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        border-bottom: 2px solid #38bdf8;
+        padding-bottom: 0.4rem;
+        margin-bottom: 0.4rem;
+        }
+
+        .goal-head {
+          display: inline-block;
+            font-weight: 800;
+            color: #111827;
+            font-size: 1rem;                 /* その行だけ少し大きく */
+            padding: 0.1em 0.25em;
+            border-left: 4px solid #38bdf8;  /* 見出し風のライン */
+            background-color: #eff6ff;       /* うっすら背景色 */
+            border-radius: 4px;
+            margin-bottom: 0.2em;
+        }
+
+
+        /* テキスト(p) */
+        .goal-text {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: #4b5563;
+        }
+
+        /* 行間や改行が多くても読みやすいように */
+        .goal-text br {
+        line-height: 1.4;
+        }
+
+        /* スマホ ～ タブレット：1カラム（縦並び） */
+        @media (max-width: 767px) {
+        .goals-container {
+            flex-direction: column;
+        }
+
+        .goal-card {
+            padding: 1.25rem 1.4rem;
+        }
+
+        .goal-title {
+            font-size: 1rem;
+        }
+
+        .goal-text {
+            font-size: 0.9rem;
+        }
+        }
+
+        /* 中～大きめ画面：3カラムがきれいに並ぶよう調整 */
+        @media (min-width: 768px) {
+        .goal-card {
+            flex: 1 1 calc(33.333% - 1rem);
+        }
+        }
+        </style>
+        
+        <link rel="stylesheet" href="article_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="hamburger.css">      
+    </head>
+    <body>
+        <div class="sidebar-container">
+            <div class="sidebar">
+            <div class="sidebar-title">
+                <a href="index.html">月刊棚牡丹</a>
+            </div>
+            <ul class="sidebar-list">
+                <li class="list-item"><a href="1_About.html">About me?</a></li>
+                <li class="list-item"><a href="2_Article.html">Article</a></li>
+                <li class="list-item"><a href="3_Films.html">Films</a></li>
+            </ul>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu Toggle">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <div class="sidebar-mini">
+            <div class="sidebar-title">
+            <a href="index.html">月刊棚牡丹</a>
+            </div>
+            <ul class="sidebar-list">
+            <li class="list-item"><a href="1_About.html">About me?</a></li>
+            <li class="list-item"><a href="2_Article.html">Article</a></li>
+            <li class="list-item"><a href="3_Films.html">Films</a></li>
+            </ul>
+        </div>
+        <script src="sidebar.js"></script>
+
+        <div class="main-container">
+            <h1 class="page-title">月報</h1>
+            <p>新年あけましておめでとうございます。
+                <br>本年もどうぞよろしくお願いいたします。
+                <br>…自分で自分に向けて言ってるの面白い。笑
+                <br>いいじゃないですか、自分とのお付き合いということで。
+                <br>「この心と身体でまた１年頑張っていきましょう」って意味でね。
+                <br>それにしても12月は師走でしたね。あっという間だった。
+            </p>
+            
+            <h3>12月の目標は、</h3>
+            <p>① 年内に喫茶店と整骨院のタスクを終える
+                <br>② 仕事で「貢献している」と感じられるようにする
+                <br>③ オーリス以外での収入が入る仕組み作りを考える/相談する
+                <br>④ 体調面/精神面の自己管理。その為に生活リズム、食生活、運動のバランスをとった生活をする。
+            </p>
+
+            <p>振り返りです。</p>
+
+            <p>①
+                <br>全く触れてないです。目標に入っているとすら認識がなかったかも。
+                <br>言い訳：オーリス側のやることが多かった(AWSの勉強、Laravelのアプリ開発等)
+                <br>toDoに入っているから目にはするんだけど、、、優先度がとても低い。
+            </p>
+
+            <p>②
+                <br>貢献しているとまでは思えなかったけど、メンバーとしての認識は持ってもらっているなとは感じました。特に代表とご飯や飲みに行く機会が持てた事はプチビックイベントだったと思っています。それに加えて、Laravelの話やAWSの話を積極的にしてもらえるのはこれからの事を考えての事と思うので、まだ自分はここにいてもいいのかと少し思えました。
+            </p>
+
+            <p>③
+                <br>今年の課題になりそうです。
+                <br>スポットで稼げるコーダーの仕事がないか調べる機会がありました。
+                <br>「コアタイム：○時 - ◯時」「実務経験：1年以上」等条件があるのは知っていましたが、
+                <br>スポットでのアルバイトがここまで少ないとは思ってもいませんでした。(調べ方が悪い？)
+                <br>稼げる方法…まだまだ模索中です。
+                <br>プログラミング、クリエイティブ分野で稼ぐのはこだわりたい点ではあります。
+            </p>
+
+            <p>④
+                <br>自己管理。
+                <br>できている自信は無い！
+                <br>でも生きてる！
+                <br>年末年始はノロウイルスだったけど！
+                <br>もしかして、精神的な影響もあるかも？
+                <br>(急に投げやりな回答になったな。)
+            </p>
+
+            <h3>1月の目標は、</h3>
+            <p>① 1月16日(金)までにLaravelのアプリ11個(1/4現在：4個完成)
+                <br>② 1月22日(木)までにビーチテニスイベントのフライヤーを作る
+                <br>③ 上二つの目標が終了し次第、確定申告に着手する。
+            </p>
+
+            <p>あまりわらわらと目標を立てすぎない。
+                <br>Duolingoでスペイン語を始めたけど目標には書きません。
+                <br>なんで始めたかは自由記述に書きます。
+            </p>
+
+            <h3>「自由記述」</h3>
+            <p>1月ということで、月の目標は毎月立てて達成したりしなかったりだけど、
+                <br>年間の目標も立てたので(変更はあるかもしれないけど)ここにも残してみようと思います。
+            </p>
+
+            <h2>2026年_抱負</h2>
+
+            <div class="goals-container">
+
+                <section class="goal-card">
+                <h3 class="goal-title">短期目標(~2ヶ月)</h3>
+                <p class="goal-text">
+                    <span class="goal-head">個人のビジネスカードを作る</span><br>
+                    なぜ？<br>
+                    認知されるために。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">ポートフォリオサイトを作る</span><br>
+                    なぜ？<br>
+                    単純に自分のサイトを自慢できるように持っておきたいから。 魅力を知ってもらえるように。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">「明るく、元気よく、爽やかに」を意識する！</span><br>
+                    なぜ？<br>
+                    自己中心的な性格を矯正したいから。 ポジティブな印象を与えられるようになりたいから。 しんどい時でも装う…くらいの気持ちで。自分は表情に全部現れ過ぎてしまうので。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">Laravelでアプリ10個作る</span><br>
+                    なぜ？<br>
+                    LaravelのCRUD, MVCの仕組みを理解するため。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">ビーチテニス大会を開く</span>
+                </p>
+                </section>
+
+                <section class="goal-card">
+                <h3 class="goal-title">中期目標(~半年)</h3>
+                <p class="goal-text">
+                    <span class="goal-head">月収25万円</span><br>
+                    なぜ？<br>
+                    し、支払いが…😭<br>
+                    内訳： 15万(オーリス)+ …考え中。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">スキルの拡張・安定化</span><br>
+                    なぜ？<br>
+                    もっと仕事の間口を広げたいから。<br>
+                    具体的にどんなスキルアップ？<br>
+                    ITパスポート取得 Laravel、AWS、Shopify。そもそもJSを理解するところから。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">自己分析を改めてやってみる</span><br>
+                    なぜ？<br>
+                    自分の状態を再確認したいから。<br>
+                    ・自分のポジション<br>
+                    ・できること / したいこと
+                </p>
+                </section>
+
+                <section class="goal-card">
+                <h3 class="goal-title">長期目標(~１年/それ以後)</h3>
+                <p class="goal-text">
+                    <span class="goal-head">① 来年のお正月は、体調万全で広島に帰省して、「フリーランスのエンジニアやってます」 と親戚に胸を張って堂々と言えるようになる。</span><br>
+                    なぜ？<br>
+                    まだ自信を持って自分が何をしているか説明できないので。 モゴモゴしてる状況は嫌なので。
+                </p>
+                <p class="goal-text">
+                    <span class="goal-head">② 熾る。</span><br>
+                    「太一がいてくれて良かった」と思われるような、 周りに必要とされる人間になりたい。<br>
+                    なぜ？<br>
+                    自分に自信がないから 生きている理由を説明できないから
+                </p>
+                </section>
+
+            </div>
+
+
+            <p>以上が年間の目標です。実は一度人に聞いてもらって「うーん」というリアクションをいただいており、正直「この目標でいいのか」という不安があります。
+                <br>目標の立て方はずっと悩みの種というか、うまくできている手応えを感じた試しがありません。かといって、目標の立て方を学ぶわけでもなし…。
+                <br>・定性的で定量的
+                <br>・より具体的な内容で、数字を用いると管理しやすい
+                <br>なんて事を聞きますが、あまりピンと来ず。
+                <br>理解はしていますが、じゃあ考えに考えて出来上がった定性的で定量的な目標を達成したいかと聞かれると、、、そこまでのやる気があるわけでもない。
+            </p>
+
+            <p>頑張りたくないんですかね。
+                <br>聞いたところで誰がわかるのか。
+                <br>頑張りたくないんです。きっと。
+                <br>やった方がいいことであるのはわかっているはずなのに。
+                <br>「やりたい」とならない限り、進まない。
+                <br>そんな状態で上手くいくわけがない…か。
+            </p>
+
+            <p>12月の主なイベント
+                <br>・ハレクティオとして企業研修のビーチテニスセクションに参加
+                <br>・代表とご飯に/クリスマスイブには飲みに行く
+                <br>・岡山のエンジニアの合同勉強会に参加。面白いと思える話もあった！
+                <br>・テニスに参加(1回)
+                <br>・京都旅行！…京都旅行(泣)
+                <br>・クリスマスに光南さんへスポンサー継続の訪問
+                <br>・OJOJOへ行く(2回)
+                <br>・年末の予定がノロウイルスによって崩れる。と言っても合って無いような予定だけど。
+            </p>
+
+            <p>2025年内に辛い事を終えられて良かった！
+                <br>心晴れ晴れとはいかないけど、切り替えて頑張りたい。
+                <br>そうそう、スペイン語の勉強を始めました。Bambamという曲がきっかけで
+                <br>スペイン語の文化が面白いと思ってしまいました。「嫌なことがあったらとりあえず歌って踊っとこうぜ。」←ザックリ
+                <br>普段そんな投げやりなアドバイスは絶対に嫌悪感を感じるのですが、
+                <br>ラテンな音楽がずっと好きなこと、陽気な雰囲気には憧れはあること
+                <br>に気付いてスペイン語の文化に触れてみようと思って、まずはDuolingoで毎日少しずつスペ語に触れています。あぁスペ語話者と友達になりたい。
+            </p>
+
+            <p>最近一人のことが多い。一人時間のメリットデメリットあるけど、たまには誰かに寄り添って欲しいんだなと、自分の状態に気付けました。(←いや、わかっとった事じゃろ)</p>
+
+            <p>2025年は「耐え忍ぶ」年だったように思います。(そうなるように動いたわけではないですが)
+                <br>2026年はどんな年になるかしら。
+                <br>緩く、幸せな１年にしたいですね。No more 激動。
+                <br>それでは2026年のはじまりはじまり〜。
+            </p>
+        </div>
+    </body>
+</html>
